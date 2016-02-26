@@ -4,7 +4,7 @@
 
 Name:             %{?scl_prefix}%{pkg_name}
 Version:          1.9
-Release:          7.12%{?dist}
+Release:          7.13%{?dist}
 Summary:          Parent POM for FuseSource Maven projects
 License:          ASL 2.0
 URL:              http://fusesource.com/
@@ -12,7 +12,7 @@ Source0:          http://repo1.maven.org/maven2/org/fusesource/fusesource-pom/%{
 Source1:          http://www.apache.org/licenses/LICENSE-2.0.txt
 BuildArch:        noarch
 
-BuildRequires:    %{?scl_prefix_java_common}maven-local
+BuildRequires:    %{?scl_prefix}maven-local
 
 %description
 This is a shared POM parent for FuseSource Maven projects
@@ -47,6 +47,9 @@ set -e -x
 %doc LICENSE
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1.9-7.13
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.9-7.12
 - maven33 rebuild #2
 
